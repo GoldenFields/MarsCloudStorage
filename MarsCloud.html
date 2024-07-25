@@ -11,8 +11,8 @@
             padding: 0;
             background-color: #f1f1f1;
             display: flex;
-            min-height: 100vh;
             flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
@@ -36,10 +36,9 @@
             flex: 1;
             padding: 20px;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 20px;
-            justify-content: center;
-            align-items: flex-start;
+            align-items: center;
         }
 
         footer {
@@ -77,14 +76,13 @@
             background-color: #ecf0f1;
             border: 1px solid #ccc;
             padding: 20px;
-            width: calc(100% - 280px);
+            width: 100%;
             max-width: 800px;
             overflow-y: auto;
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
-            justify-content: flex-start;
-            align-items: flex-start;
+            justify-content: center;
         }
 
         .file-item {
@@ -143,7 +141,7 @@
         #upload-form {
             background-color: #ecf0f1;
             padding: 20px;
-            width: calc(100% - 280px);
+            width: 100%;
             max-width: 800px;
             border: 1px solid #ccc;
             display: none;
@@ -167,6 +165,39 @@
 
         #upload-form button:hover {
             background-color: #2980b9;
+        }
+
+        @media (max-width: 768px) {
+            aside {
+                width: 100%;
+                order: -1;
+                padding: 10px 0;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            .file-item {
+                flex-basis: calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+
+            #upload-form {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .file-item {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+
+            .file-manager {
+                padding: 10px;
+            }
         }
     </style>
 </head>
